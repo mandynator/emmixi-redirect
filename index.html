@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redirecting to @emmi_xi</title>
+  <script>
+    window.onload = function () {
+      const url = "https://beacons.ai/emmi_xi";
+      const ua = navigator.userAgent.toLowerCase();
+
+      if (ua.includes("instagram") || ua.includes("fb")) {
+        alert("Tap the ••• or browser icon to open this in Safari or Chrome for the best experience.");
+        window.location.href = url;
+      } else {
+        window.open(url, "_blank");
+        window.location.href = url;
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="https://beacons.ai/emmi_xi">@emmi_xi on Beacons</a>...</p>
+</body>
+</html>
