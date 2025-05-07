@@ -1,3 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redirecting...</title>
+  <script>
+    window.onload = function () {
+      const url = "https://link.me/emmi_xi";
+      const ua = navigator.userAgent.toLowerCase();
+
+      // Try to escape Instagram or Facebook in-app browser
+      if (ua.includes("instagram") || ua.includes("fb")) {
+        const androidIntent = "intent://link.me/emmi_xi#Intent;scheme=https;package=com.android.chrome;end";
+        const iosChromeURL = "googlechrome://" + url.replace(/^https?:\/\//, '');
+
+        if (/android/.test(ua)) {
+          // Try to open in external Chrome on Android
+          window.location = androidIntent;
+        } else if (/iphone|ipad/.test(ua)) {
+          // Try to open in Chrome on iOS
+          window.location = iosChromeURL;
+        }
+
+        // Fallback to regular link after 2 seconds
+        setTimeout(() => {
+          window.location.href = url;
+        }, 2000);
+      } else {
+        // All other browsers — redirect normally
+        window.location.href = url;
+      }
+    };
+  </script>
+</head>
+<body></body>
+</html>
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
   window.onload = function () {
     const url = "https://link.me/emmi_xi";
